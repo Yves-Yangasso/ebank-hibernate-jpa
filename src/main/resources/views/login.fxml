@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yang.bao.yang_bank.controllers.LoginController">
+   <children>
+      <TextField id="txt_mdp" fx:id="txt_mdp" layoutX="268.0" layoutY="246.0" prefHeight="35.0" prefWidth="312.0" />
+      <TextField id="txt_username" fx:id="txt_username" layoutX="268.0" layoutY="165.0" prefHeight="35.0" prefWidth="312.0" />
+      <Button id="btn_inscription" fx:id="btn_inscription" layoutX="439.0" layoutY="322.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #3BD3CC;" text="Inscription" textFill="#862222" onAction="#handleInscription">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button id="btn_connexion" fx:id="btn_connexion" layoutX="268.0" layoutY="322.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="141.0" style="-fx-background-color: #3BD3CC;" text="Se Connecter" textFill="#862222" onAction="#handleConnexion">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="268.0" layoutY="129.0" text="Username" />
+      <Label layoutX="273.0" layoutY="214.0" text="Mot de passe" />
+      <Pane prefHeight="400.0" prefWidth="248.0" style="-fx-background-color: #3B9CD3;">
+         <children>
+            <ImageView fitHeight="195.0" fitWidth="213.0" layoutX="18.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+<!--                  <Image url="@/images/logo.png" />-->
+               </image>
+            </ImageView>
+            <Label layoutX="30.0" layoutY="225.0" text="YANG - BAO" textFill="#e9e1e1">
+               <font>
+                  <Font name="Microsoft Himalaya" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="265.0" layoutY="26.0" prefHeight="61.0" prefWidth="320.0" style="-fx-background-color: #3B9CD3;">
+         <children>
+            <Label layoutX="89.0" text="Connexion" textFill="#e9e1e1">
+               <font>
+                  <Font name="Microsoft Himalaya" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>
