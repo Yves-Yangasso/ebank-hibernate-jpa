@@ -20,6 +20,13 @@ import yang.bao.yang_bank.entity.Operation;
 import yang.bao.yang_bank.service.AccountService;
 import yang.bao.yang_bank.service.CustomerService;
 import yang.bao.yang_bank.service.OperationService;
+import yang.bao.yang_bank.service.impl.AccountServiceImpl;
+import yang.bao.yang_bank.service.impl.CustomerServiceImpl;
+import yang.bao.yang_bank.service.impl.OperationServiceImpl;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import java.time.Instant;
 
@@ -55,29 +62,22 @@ public class TransactionController {
     @FXML
     private Button btnRafraichir;
 
+    private EntityManagerFactory emf;
+    private EntityManager em;
     private CustomerService customerService;
     private AccountService accountService;
     private OperationService operationService;
     private Custumer currentCustomer;
 
-    public void setCustomerService(CustomerService customerService) {
-        this.customerService = customerService;
-    }
-
-    public void setAccountService(AccountService accountService) {
-        this.accountService = accountService;
-    }
-
-    public void setOperationService(OperationService operationService) {
-        this.operationService = operationService;
-    }
-
-    public void setCurrentCustomer(Custumer customer) {
-        this.currentCustomer = customer;
-    }
-
     @FXML
     private void initialize() {
+        emf = Persistence.createEntityManagerFactory("yang_bank_pu");
+        em = emf.createEntityManager();
+        customerService = new CustomerServiceImpl(em);
+        accountService  = new AccountServiceImpl(em);
+        operationService  = new OperationServiceImpl(em);
+
+
         colDate.setCellValueFactory(new PropertyValueFactory<>("operationDate"));
         colType.setCellValueFactory(new PropertyValueFactory<>("typeOperation"));
         colMontant.setCellValueFactory(new PropertyValueFactory<>("amount"));
@@ -178,5 +178,11 @@ public class TransactionController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public void setCustomerService(CustomerService customerService) {
+    }
+
+    public void setCurrentCustomer(Custumer customer) {
     }
 }

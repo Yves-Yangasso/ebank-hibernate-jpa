@@ -32,4 +32,14 @@ public class Custumer {
     @OneToMany(mappedBy = "custumer")
     private Set<Account> accounts = new LinkedHashSet<>();
 
+    @Override
+    public String toString() {
+        return "Custumer{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", username='" + username + '\'' +
+                '}';
+    }
+
 }

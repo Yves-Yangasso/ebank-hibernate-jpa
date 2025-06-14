@@ -57,4 +57,10 @@ public class CustomerServiceImpl implements CustomerService {
     public void deleteCustomer(Custumer customer) {
         customerRepository.delete(customer);
     }
+
+    public boolean loginCustomer(String username, String password) {
+        Custumer customer = getCustomerByUsername(username);
+
+     return customer != null && customer.getPassword().equals(password);
+    }
 }

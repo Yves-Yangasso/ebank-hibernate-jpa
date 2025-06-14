@@ -54,7 +54,10 @@ public class Main extends Application {
         stage.show();
 
         // (Optionnel) Lancer un test en console
-        // runConsoleTest();
+         //runConsoleTest();
+        System.out.println("Customer trouvé: " + customerService.getCustomerByUsername("titi"));
+
+
     }
 
     @Override
@@ -67,8 +70,8 @@ public class Main extends Application {
     private void runConsoleTest() {
         try {
             // Création de clients
-            Custumer john = customerService.createCustomer("John", "Doe", "john_doe", "password123");
-            Custumer alice = customerService.createCustomer("Alice", "Smith", "alice_smith", "password456");
+            Custumer john = customerService.createCustomer("titi", "Doe", "titi", "titi");
+            Custumer alice = customerService.createCustomer("toto", "Smith", "toto", "titi");
 
             // Création de comptes
             Account johnAccount = accountService.createAccount(john, 1000.0);
