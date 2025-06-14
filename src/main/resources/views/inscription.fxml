@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" alignment="CENTER" spacing="15.0" style="-fx-background-color: linear-gradient(to bottom, #f5f7fa, #e4e7eb); -fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yang.bao.yang_bank.controllers.InscriptionController">
+    <children>
+        <Label text="Inscription" style="-fx-text-fill: #2b3e50;">
+            <font>
+                <Font name="Arial Bold" size="28.0"/>
+            </font>
+        </Label>
+        <Label text="Prénom" />
+        <TextField fx:id="txtFirstName" prefWidth="200.0" />
+        <Label text="Nom" />
+        <TextField fx:id="txtLastName" prefWidth="200.0" />
+        <Label text="Nom d'utilisateur" />
+        <TextField fx:id="txtUsername" prefWidth="200.0" />
+        <Label text="Mot de passe" />
+        <TextField fx:id="txtPassword" prefWidth="200.0" />
+        <Button fx:id="btnSubmit" text="S'inscrire" onAction="#handleSubmit" style="-fx-background-color: #2b3e50; -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-background-radius: 5;" prefHeight="35.0" prefWidth="120.0">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnRetour" text="Retour" onAction="#handleRetour" style="-fx-background-color: #2b3e50; -fx-text-fill: #2b3e50; -fx-background-radius: 5;" prefHeight="120.0" prefWidth="35.0">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Button>
+    </children>
+</VBox>

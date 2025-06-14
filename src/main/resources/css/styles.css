@@ -1,0 +1,23 @@
+.nav-button:hover {
+    -fx-background-color: #3BD3CC;
+    -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2b3e50;
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-font-family: "Arial";
+}
+
+.label {
+    -fx-font-family: "Arial";
+}

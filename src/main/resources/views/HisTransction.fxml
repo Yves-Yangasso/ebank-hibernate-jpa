@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom, #f5f7fa, #e4e7eb);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="yang.bao.yang_bank.controllers.TransactionController">
+    <top>
+        <VBox style="-fx-background-color: #2b3e50; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);">
+            <children>
+                <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 15;">
+                    <children>
+                        <Label text="YangBank" style="-fx-text-fill: #ffffff;">
+                            <font>
+                                <Font name="Arial Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <HBox prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnDeconnexion" text="Déconnexion" onAction="#handleDeconnexion" style="-fx-background-color: #ff4d4d; -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-background-radius: 5;" prefHeight="35.0" prefWidth="120.0">
+                            <font>
+                                <Font name="Arial" size="14.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="nav-button" />
+                            </styleClass>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-padding: 20;">
+            <children>
+                <Label text="Historique des Transactions" style="-fx-text-fill: #2b3e50;">
+                    <font>
+                        <Font name="Arial Bold" size="28.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tableTransactions" prefHeight="400.0" prefWidth="760.0" style="-fx-background-color: #ffffff; -fx-border-color: #d3d6db; -fx-border-radius: 5; -fx-background-radius: 5;">
+                    <columns>
+                        <TableColumn fx:id="colDate" prefWidth="150.0" text="Date">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="operationDate" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colType" prefWidth="120.0" text="Type">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="typeOperation" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colMontant" prefWidth="120.0" text="Montant">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="amount" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colCompte" prefWidth="100.0" text="Compte">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="accountId" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Button fx:id="btnRafraichir" text="Rafraîchir" onAction="#handleRafraichir" style="-fx-background-color: #2b3e50; -fx-text-fill: #ffffff; -fx-font-weight: bold; -fx-background-radius: 5;" prefHeight="35.0" prefWidth="120.0">
+                        <font>
+                            <Font name="Arial" size="14.0" />
+                        </font>
+                    </Button>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</BorderPane>

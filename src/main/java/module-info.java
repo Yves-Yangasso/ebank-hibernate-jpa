@@ -6,6 +6,8 @@ module yang.bao.yang_bank {
     requires org.hibernate.orm.core;
 //    requires mysql.connector.java;
     requires static lombok;
+    requires java.desktop;
+    requires jbcrypt;
 
     opens yang.bao.yang_bank to javafx.fxml;
     opens yang.bao.yang_bank.entity to org.hibernate.orm.core;
